@@ -181,6 +181,7 @@ section.block{padding-block:clamp(72px,10vw,140px)}
 .proj.half-w{grid-column:span 3}
 .proj .viz{background:var(--bg-2);position:relative;min-height:240px;border-bottom:1px solid var(--line)}
 .proj.big .viz{border-bottom:0;border-right:1px solid var(--line);min-height:360px}
+.proj .viz img{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}
 .proj .viz canvas,.proj .viz svg{display:block;width:100%;height:100%;position:absolute;inset:0}
 .viz .note{position:absolute;left:14px;bottom:12px;font-family:var(--f-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:color-mix(in srgb,var(--bg-2) 85%,transparent);padding:3px 6px;border-radius:4px}
 .proj .txt{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:14px}
@@ -419,7 +420,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
   <div class="wrap">
     <div class="sec-head rv">
       <span class="mono">Built on my own time</span>
-      <h2>Projects. <span class="soft">Open source, synthetic data, real rules.</span></h2>
+      <h2>Projects. <span class="soft">Open source, real public and synthetic data.</span></h2>
     </div>
     <div class="projects">
       <a class="proj big rv" href="https://github.com/amirator/hr-analytics-powerbi" target="_blank" rel="noopener">
@@ -468,6 +469,66 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
           <h3>CLINICFLOW</h3>
           <p>A healthcare operations dashboard built on ~145,000 synthetic encounter records and 26,500 shift records, so staffing can be read against demand hour by hour.</p>
           <span class="repo">github.com/amirator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/airline-ontime-snowflake-tableau" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/airline-ontime-snowflake-tableau.png" alt="Airline on-time performance project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">Snowflake SQL · sqlglot · DuckDB · Tableau prep</span>
+          <h3>Airline on-time performance</h3>
+          <p>7.0M real 2025 US flights (BTS) modelled in Snowflake-dialect SQL, verified locally on DuckDB, with a Tableau-ready extract.</p>
+          <div class="facts"><div><b>77.7%</b><span>on-time</span></div><div><b>39.2%</b><span>delay mins: late aircraft</span></div></div>
+          <span class="repo">github.com/amirator/airline-ontime-snowflake-tableau <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/chicago311-rodent-requirements-pack" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/chicago311-rodent-requirements-pack.png" alt="311 requirements pack project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">Business analysis · SQL · Jira CSV</span>
+          <h3>311 requirements pack</h3>
+          <p>BRD, 9 user stories, 12 UAT scripts and a traceability matrix, grounded in SQL on 44,181 real Chicago 311 requests.</p>
+          <div class="facts"><div><b>3.7d</b><span>median response</span></div><div><b>1.7–5.0d</b><span>ward spread</span></div></div>
+          <span class="repo">github.com/amirator/chicago311-rodent-requirements-pack <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/chicago-taxi-dbt-bigquery-looker" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/chicago-taxi-dbt-bigquery-looker.png" alt="Chicago taxi incremental ELT project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">dbt · BigQuery-portable · LookML</span>
+          <h3>Chicago taxi incremental ELT</h3>
+          <p>Hash-checked incremental dbt pipeline over 7.07M real taxi trips, with reconciliation tests and a LookML semantic layer.</p>
+          <div class="facts"><div><b>7.07M</b><span>trips</span></div><div><b>55.2%</b><span>start in Central</span></div></div>
+          <span class="repo">github.com/amirator/chicago-taxi-dbt-bigquery-looker <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/nyc-tlc-airflow-pyspark" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/nyc-tlc-airflow-pyspark.png" alt="NYC TLC batch pipeline project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">Airflow 3 · PySpark · data quality</span>
+          <h3>NYC TLC batch pipeline</h3>
+          <p>An Airflow 3 DAG drives a PySpark transform and a quality gate over 383,790 real NYC green-taxi records.</p>
+          <div class="facts"><div><b>7</b><span>DQ rules</span></div><div><b>4.27%</b><span>quarantined</span></div></div>
+          <span class="repo">github.com/amirator/nyc-tlc-airflow-pyspark <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/la-city-month-end-close-bva" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/la-city-month-end-close-bva.png" alt="LA City close &amp; budget vs actual project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">Month-end close · SQL · Excel · DAX</span>
+          <h3>LA City close &amp; budget vs actual</h3>
+          <p>FY2026 tie-out of $46.69bn of postings by department and fund, General Fund BvA and automated close checks.</p>
+          <div class="facts"><div><b>305/691</b><span>lines tie to the cent</span></div><div><b>95.4%</b><span>GF committed</span></div></div>
+          <span class="repo">github.com/amirator/la-city-month-end-close-bva <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+        </div>
+      </a>
+      <a class="proj half-w rv" href="https://github.com/amirator/costco-3-statement-dcf-sec" target="_blank" rel="noopener">
+        <div class="viz"><img src="assets/projects/costco-3-statement-dcf-sec.png" alt="Costco 3-statement model + DCF project thumbnail" loading="lazy"><span class="note">Real public data · CI-tested</span></div>
+        <div class="txt">
+          <span class="mono">Financial modelling · SEC EDGAR XBRL · Excel</span>
+          <h3>Costco 3-statement model + DCF</h3>
+          <p>Linked IS/BS/CF built from 10-K XBRL facts, projected 5 years with a zero balance gap, and valued by FCFF DCF.</p>
+          <div class="facts"><div><b>$303.2bn</b><span>FY2026 revenue</span></div><div><b>8.2%</b><span>WACC</span></div></div>
+          <span class="repo">github.com/amirator/costco-3-statement-dcf-sec <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
         </div>
       </a>
     </div>
@@ -550,7 +611,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
     <p class="lede rv">I'm looking for executive office, BI and operations roles. A short email with the role and the team is the fastest way to reach me.</p>
     <div class="contact-row rv">
       <div class="email-box"><code id="emailText">amirator@outlook.com</code><button class="btn primary copy-email" type="button" style="padding:10px 18px">Copy</button></div>
-      <a class="btn" href="https://linkedin.com/in/amirator" target="_blank" rel="noopener">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <a class="btn" href="https://linkedin.com/in/amirator1" target="_blank" rel="noopener">LinkedIn <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
     </div>
     <div class="contact-meta rv">
       <div><span class="mono">Phone</span><span class="val">+966 55 221 3375</span></div>
